@@ -80,18 +80,24 @@ insert into cafecombytes (matricula, nome, sobrenome, idade, curso, cidade) valu
 <h2> MongoDB </h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 db.cafecombytes.remove({nome: ‘Lucas’})
+</pre></div>
+
 
 <h2> SQL Relacional </h2>
-</pre></div>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 delete from cafecombytes where matricula= 1
+</pre></div>
+
 
 <h1> Capped Collections </h1>
 <h3> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h3>
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-</pre></div>
 db.createCollection("<collection>", {capped: true, size: <tamanho-em-bytes>, max: <número-de-documentos>})
 db.createCollection("fisco", {capped: true, size: 4096, max: 10})
+</pre></div>
+
 
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
