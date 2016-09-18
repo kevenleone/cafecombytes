@@ -69,6 +69,4 @@ ou
 
 <img src=http://i.imgur.com/1sOgO3c.png>
 
-
-
-0
+<img src="mongodb/screenshots/1.jpg">
