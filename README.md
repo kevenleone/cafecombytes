@@ -1,4 +1,4 @@
-# MONGODB Café com bytes
+﻿# MONGODB Café com bytes
 Aula sobre mongodb - cafecombytes
 
 O MongoDB é um document database 
@@ -23,3 +23,6 @@ Para iniciar o banco basta abrir o CMD (Promp de Comando) e iniciar o serviço :
 O resultado será este:
 
 mongodb/1.jpg
+a
+aa
+
