@@ -38,7 +38,16 @@ Depois disto basta fazer nossas consultas usando a mesma janela que iniciamos o 
 
 Aqui farei algumas comparações entre o modelo relacional que usamos nos banco SQL e o não relacional (NOSQL) que usamos no mongo. Estes exemplos são relacionados ao banco cafecombytes.
 
+<h3> Alguns comandos do MongoDB </h3>
+
+<h3>Collections</h3>
+
+Coleções no MongoDB são recipientes para um grupo de entidades similares. Um único banco de dados pode ter muitas coleções. Para exibir as coleções em seu banco de dados execute:
+
 Pra saber a quantidade de inserções dentro de uma collection usamos:
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">show collections
+</pre></div>
 
 Mongo > db.cafecombytes.count() 
 SQL Relacional > Select count(*) from cafecombytes
@@ -47,8 +56,7 @@ SQL Relacional > Select count(*) from cafecombytes
 
 <h2>MongoDB:</h2>
 
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-db.cafecombytes.find()
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.find()
 db.cafecombytes.findOne()
 db.cafecombytes.find({matricula:”141220111”}]
 db.cafecombytes.find({idade:20}, {"curso":true, "_id":false})
@@ -56,8 +64,7 @@ db.cafecombytes.find({curso:"Análise e desenvolvimento de Sistemas"}, {"nome":t
 </pre></div>
 
 <h2>SQL Relacional:</h2>
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-Select * from cafecombytes
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">Select * from cafecombytes
 Select * from cafecombytes limit 1
 Select * from cafecombytes where matricula = “141220109”
 select curso from cafecombytes where idade=20
@@ -65,46 +72,45 @@ select curso from cafecombytes where idade=20
 
 Inserindo no banco de dados.
 <h2> MongoDB</h2>
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-db.cafecombytes.insert({matricula: '141220198', nome:'José', sobrenome: 'Loureiro', idade:'20', curso: 'Análise e desenvolvimento de Sistemas', cidade:'Catende'})
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.insert({matricula: '141220198', nome:'José', sobrenome: 'Loureiro', idade:'20', curso: 'Análise e desenvolvimento de Sistemas', cidade:'Catende'})
 </pre></div>
 
 <h2>SQL Relacional </h2>
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-insert into cafecombytes (matricula, nome, sobrenome, idade, curso, cidade) values (141220198, 'José', 'Loureiro', 20, 'Análise e desenvolvimento de Sistemas', 'Catende');
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">insert into cafecombytes (matricula, nome, sobrenome, idade, curso, cidade) values (141220198, 'José', 'Loureiro', 20, 'Análise e desenvolvimento de Sistemas', 'Catende');
 </pre></div>
 
 > OBS: Não é preciso alterar a estrutura da tabela para inserir no MongoDB, ele já faz isso automáticamente. Porém nos bancos SQL tal alteração é necessária, para isso basta dar um alter table nometabela add sexo varchar(20);
 
 <h1> Removendo informações </h2>
 <h2> MongoDB </h2>
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-db.cafecombytes.remove({nome: ‘Lucas’})
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.remove({nome: ‘Lucas’})
 </pre></div>
 
 
 <h2> SQL Relacional </h2>
 
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-delete from cafecombytes where matricula= 1
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">delete from cafecombytes where matricula= 1
 </pre></div>
 
 
 <h1> Capped Collections </h1>
 <h5> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h5>
 
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-db.createCollection("<collection>", {capped: true, size: <tamanho-em-bytes>, max: <número-de-documentos>})
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.createCollection("<collection>", {capped: true, size: <tamanho-em-bytes>, max: <número-de-documentos>})
 db.createCollection("fisco", {capped: true, size: 4096, max: 10})
 </pre></div>
 
 
 
 <h2> Sumilh </h2>
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-var smithPersons = db.bank_data.find({first_name : "DANIEL"}, {first_name : 1, last_name: 1});
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">var smithPersons = db.bank_data.find({first_name : "DANIEL"}, {first_name : 1, last_name: 1});
 for(var i = 0; i < smithPersons.count(); i++){ 
     print(smithPersons[i].first_name + ' ' + smithPersons[i].last_name );
 }
+
+</pre></div>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
+
 </pre></div>
 
