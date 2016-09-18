@@ -91,7 +91,7 @@ delete from cafecombytes where matricula= 1
 
 
 <h1> Capped Collections </h1>
-<h3> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h3>
+<h5> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h5>
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 db.createCollection("<collection>", {capped: true, size: <tamanho-em-bytes>, max: <número-de-documentos>})
@@ -100,8 +100,11 @@ db.createCollection("fisco", {capped: true, size: 4096, max: 10})
 
 
 
+<h2> Sumilh </h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-
-
+var smithPersons = db.bank_data.find({first_name : "DANIEL"}, {first_name : 1, last_name: 1});
+for(var i = 0; i < smithPersons.count(); i++){ 
+    print(smithPersons[i].first_name + ' ' + smithPersons[i].last_name );
+}
 </pre></div>
 
