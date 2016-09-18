@@ -22,4 +22,4 @@ Com o nome data e dentro da pasta data outra pasta chamada db.
 Para iniciar o banco basta abrir o CMD (Promp de Comando) e iniciar o serviço : "mongod" sem aspas.
 O resultado será este:
 
-http://i.imgur.com/EpJQCC5g.jpg
+mongodb/1.jpg
