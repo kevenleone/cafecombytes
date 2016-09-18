@@ -55,8 +55,6 @@ db.cafecombytes.find({idade:20}, {"curso":true, "_id":false})
 db.cafecombytes.find({curso:"Análise e desenvolvimento de Sistemas"}, {"nome":true, "curso":true, "idade":true, "_id":false}).pretty().count()
 </pre></div>
 
-
-
 <h2>SQL Relacional:</h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 Select * from cafecombytes
@@ -69,14 +67,11 @@ Inserindo no banco de dados.
 <h2> MongoDB</h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 db.cafecombytes.insert({matricula: '141220198', nome:'José', sobrenome: 'Loureiro', idade:'20', curso: 'Análise e desenvolvimento de Sistemas', cidade:'Catende'})
-
-<h2>SQL Relacional </h2>
 </pre></div>
 
+<h2>SQL Relacional </h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 insert into cafecombytes (matricula, nome, sobrenome, idade, curso, cidade) values (141220198, 'José', 'Loureiro', 20, 'Análise e desenvolvimento de Sistemas', 'Catende');
-
-
 </pre></div>
 
 > OBS: Não é preciso alterar a estrutura da tabela para inserir no MongoDB, ele já faz isso automáticamente. Porém nos bancos SQL tal alteração é necessária, para isso basta dar um alter table nometabela add sexo varchar(20);
@@ -90,17 +85,12 @@ db.cafecombytes.remove({nome: ‘Lucas’})
 </pre></div>
 delete from cafecombytes where matricula= 1
 
-
-
 <h1> Capped Collections </h1>
-<h3> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções.
+<h3> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h3>
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-
-
 </pre></div>
 db.createCollection("<collection>", {capped: true, size: <tamanho-em-bytes>, max: <número-de-documentos>})
-
 db.createCollection("fisco", {capped: true, size: 4096, max: 10})
 
 
