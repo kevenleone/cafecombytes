@@ -46,24 +46,27 @@ Antes de tudo abra o Prompt de Comando (Windows + R) > cmd
 Em seguida vai abrir o prompt de comando e utilize este comando a seguir:
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">mongoimport --jsonArray --db nomedobanco --collection nomedacollection [caminho]\nomearquivo.json
+</pre></div>
 
 Como eu usaria o mesmo comando utilizando a minha máquina e o arquivo cafecombytes.json ficaria assim:
 
-mongoimport --jsonArray --db fafica --collection cafecombytes E:\git\mongo\mongodb\cafecombytes.json
-
-</pre></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">mongoimport --jsonArray --db fafica --collection cafecombytes E:\git\mongo\mongodb\cafecombytes.json</pre></div>
 
 <h3>Collections</h3>
 
 Coleções no MongoDB são recipientes para um grupo de entidades similares. Um único banco de dados pode ter muitas coleções. Para exibir as coleções em seu banco de dados execute:
 
-Pra saber a quantidade de inserções dentro de uma collection usamos:
-
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">show collections
 </pre></div>
 
-Mongo > db.cafecombytes.count() 
-SQL Relacional > Select count(*) from cafecombytes
+Pra saber a quantidade de inserções dentro de uma collection usamos:
+<h2> MongoDB </h2>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.count()
+</pre></div>
+
+<h2> SQL Relacional </h2>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">Select count(*) from cafecombytes
+</pre></div>
 
 <h1>Buscas:</h1>
 
