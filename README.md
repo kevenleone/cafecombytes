@@ -63,7 +63,11 @@ select curso from cafecombytes where idade=20
 50000</pre></div>
 
 
+http://i.imgur.com/1sOgO3c.png
 
+ou
+
+<img src=http://i.imgur.com/1sOgO3c.png>
 
 
 
