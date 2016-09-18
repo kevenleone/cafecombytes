@@ -40,6 +40,19 @@ Aqui farei algumas comparações entre o modelo relacional que usamos nos banco 
 
 <h3> Alguns comandos do MongoDB </h3>
 
+<h3> Importando um arquivo json para o MongoDB </h3>
+
+Antes de tudo abra o Prompt de Comando (Windows + R) > cmd 
+Em seguida vai abrir o prompt de comando e utilize este comando a seguir:
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">mongoimport --jsonArray --db nomedobanco --collection nomedacollection [caminho]\nomearquivo.json
+
+Como eu usaria o mesmo comando utilizando a minha máquina e o arquivo cafecombytes.json ficaria assim:
+
+mongoimport --jsonArray --db fafica --collection cafecombytes E:\git\mongo\mongodb\cafecombytes.json
+
+</pre></div>
+
 <h3>Collections</h3>
 
 Coleções no MongoDB são recipientes para um grupo de entidades similares. Um único banco de dados pode ter muitas coleções. Para exibir as coleções em seu banco de dados execute:
