@@ -59,7 +59,8 @@ Select * from cafecombytes where matricula = “141220109”
 select curso from cafecombytes where idade=20
 
 
-
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.bank_data.count</span>()
+50000</pre></div>
 
 
 
