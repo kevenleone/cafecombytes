@@ -29,7 +29,7 @@ O resultado será este:
 Depois abra outro CMD (Prompt de Comando) e digite: "mongo" sem aspas.
 O resultado será este:
 
- //mongodb/screenshots/2.jpg
+ <img src="https://github.com/kevenleone/mongodb/blob/master/screenshots/2.jpg">
 
 Em pararelo (com 2 prompts aberto) tanto com o mongod e mongo abertos.
 
@@ -45,22 +45,36 @@ SQL Relacional > Select count(*) from cafecombytes
 
 Buscas:
 
-MongoDB:
+<h2>MongoDB:</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
 db.cafecombytes.find()
 db.cafecombytes.findOne()
 db.cafecombytes.find({matricula:”141220111”}]
 db.cafecombytes.find({idade:20}, {"curso":true, "_id":false})
 db.cafecombytes.find({curso:"Análise e desenvolvimento de Sistemas"}, {"nome":true, "curso":true, "idade":true, "_id":false}).pretty().count()
 
-SQL Relacional:
+
+</pre></div>
+
+
+
+<h2>SQL Relacional:</h2>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
+
 Select * from cafecombytes
 Select * from cafecombytes limit 1
 Select * from cafecombytes where matricula = “141220109”
 select curso from cafecombytes where idade=20
 
+</pre></div>
 
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.bank_data.count</span>()
-50000</pre></div>
+
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
+
+
+</pre></div>
 
 
 http://i.imgur.com/1sOgO3c.png
@@ -70,3 +84,9 @@ ou
 <img src=http://i.imgur.com/1sOgO3c.png>
 
 <img src="mongodb/screenshots/1.jpg">
+
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
+
+
+</pre></div>
