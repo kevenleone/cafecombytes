@@ -109,6 +109,38 @@ Inserindo no banco de dados.
 </pre></div>
 
 
+<h1> Update no MongoDB </h1>
+<h3> Utilizamos o update quando queremos alterar algum valor dentro do banco de dados, no mongodb é possível alterar várias informações em um único update </h3>
+
+<h2>MongoDB</h2>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.update({nome:"Keven Leone"},{nome:"Keven Leone dos Santos"})
+</pre></div>
+<h2> SQL Relacional </h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">alter table cafecombytes drop column matricula
+alter table cafecombytes drop column sobrenome
+alter table cafecombytes drop column idade
+alter table cafecombytes drop column curso
+alter table cafecombytes drop column cidade
+update cafecombytes set nome:'Keven Leone', where matricula = '141220109';
+</pre></div>
+
+<h1> Operadores </h1>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.bank_data.find({$or: [ { last_name: "MARTINEZ"}, {last_name: "SMITH"} ]})
+db.cafecombytes.find({$or: [{curso: "Análise e desenvolvimento de Sistemas"},{curso:"Administração"}]})
+db.cafecombytes.find({cidade:"Palmares", $or: [{curso: "Análise e desenvolvimento de Sistemas"},{curso:"Administração"}]}).pretty()
+</pre></div>
+
+Para que os resultados fiquem mais "limpos" basta usar
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.find({$or:[{curso: "Análise e desenvolvimento de Sistemas"},{curso:"Administração"} ]}, {nome: 1, sobrenome: 1})
+</pre></div>
+
+<p> Para organizar as informações por ordem alfabética basta utilizar o <b>sort()</b></p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">db.cafecombytes.find({$or: [{curso: "Análise e desenvolvimento de Sistemas"},{curso:"Administração"}).sort({nome: 1 })
+</pre></div>
+
+
 <h1> Capped Collections </h1>
 <h5> São coleções "tampadas" com limite de conteúdo que podem ser inseridos nela, o limite pode ser feito pelo tamanho em bytes do arquivo ou por numero de inserções. </h5>
 
