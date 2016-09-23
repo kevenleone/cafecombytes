@@ -150,7 +150,7 @@ db.createCollection("fisco", {capped: true, size: 4096, max: 10})
 
 
 
-<h2> Sumilh </h2>
+<h2> Exemplo utilizando um for com o bank_data </h2>
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">var smithPersons = db.bank_data.find({first_name : "DANIEL"}, {first_name : 1, last_name: 1});
 for(var i = 0; i < smithPersons.count(); i++){ 
     print(smithPersons[i].first_name + ' ' + smithPersons[i].last_name );
@@ -158,7 +158,4 @@ for(var i = 0; i < smithPersons.count(); i++){
 
 </pre></div>
 
-<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> <span class="pl-en">
-
-</pre></div>
 
